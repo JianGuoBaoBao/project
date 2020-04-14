@@ -58,7 +58,7 @@ public class DruidDataSourceConfiguration {
     }
 
     /**
-     * @see org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.Tomcat 仿写的你可以去了解
+     * @see org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.Tomcat
      * @param properties 读入的配置
      * @return DruidDataSource
      */
