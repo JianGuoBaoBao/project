@@ -3,10 +3,10 @@ package com.nut.service.impl;
 import com.nut.dao.UserInfoMapper;
 import com.nut.entity.UserInfo;
 import com.nut.service.UserInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
@@ -15,9 +15,14 @@ public class UserInfoServiceImpl implements UserInfoService {
     private UserInfoMapper userInfoMapper;
 
     @Override
-    public int insert(UserInfo record) {
+    public void insert(UserInfo record) {
 
-        return userInfoMapper.insert(record);
+        userInfoMapper.insert(record);
+    }
+
+    @Override
+    public List<UserInfo> getUserInfoByBaseMobile(String baseMobile) {
+        return userInfoMapper.getUserInfoByBaseMobile(baseMobile);
     }
 
     @Override

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -33,4 +34,9 @@ public class ProjectApplicationTests {
         userInfoService.deleteByMobile("12306");
     }
 
+    @Test
+    public void getUserInfoByBaseMobile(){
+       List<UserInfo> userInfo = userInfoService.getUserInfoByBaseMobile("12306");
+        System.out.println(userInfo);
+    }
 }

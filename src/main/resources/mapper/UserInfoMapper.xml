@@ -32,14 +32,14 @@
         user_describe
     </sql>
     <insert id="insert" parameterType="com.nut.entity.UserInfo">
-    insert into user_info (user_id, user_name, user_base_mobile,
-      user_other_phone, user_pwd, user_save_num,
-      user_profile_picture, user_nickname, user_openid,
-      user_describe)
-    values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userBaseMobile,jdbcType=VARCHAR},
-      #{userOtherPhone,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, #{userSaveNum,jdbcType=VARCHAR},
-      #{userProfilePicture,jdbcType=VARCHAR}, #{userNickname,jdbcType=VARCHAR}, #{userOpenid,jdbcType=VARCHAR},
-      #{userDescribe,jdbcType=LONGVARCHAR})
+        insert into user_info (user_id, user_name, user_base_mobile,
+          user_other_phone, user_pwd, user_save_num,
+          user_profile_picture, user_nickname, user_openid,
+          user_describe)
+        values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userBaseMobile,jdbcType=VARCHAR},
+          #{userOtherPhone,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, #{userSaveNum,jdbcType=VARCHAR},
+          #{userProfilePicture,jdbcType=VARCHAR}, #{userNickname,jdbcType=VARCHAR}, #{userOpenid,jdbcType=VARCHAR},
+          #{userDescribe,jdbcType=LONGVARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="com.nut.entity.UserInfo">
         insert into user_info
@@ -109,7 +109,12 @@
         </trim>
     </insert>
 
-    <delete id="deleteByMobile" parameterType="com.nut.entity.UserInfo">
+    <delete id="deleteByMobile" parameterType="String">
         DELETE FROM user_info WHERE user_base_mobile = #{userBaseMobile,jdbcType=VARCHAR}
     </delete>
+
+    <select id="getUserInfoByBaseMobile" parameterType="String" resultType="com.nut.entity.UserInfo">
+        select  * from user_info where user_base_mobile =#{userBaseMobile,jdbcType=VARCHAR}
+    </select>
+
 </mapper>

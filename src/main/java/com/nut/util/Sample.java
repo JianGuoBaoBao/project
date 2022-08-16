@@ -35,7 +35,7 @@ public class Sample {
 
         // 调用接口
         String idCardSide = "back";
-        String path = "/Users/wanglingjie/IdeaProjects/iris_project/tempImg/3C8C5B451BB4445697730217EC8648E3.jpeg";
+        String path = "/Users/wanglingjie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/abbf2d2e3c23149cda689c6317b9907f/Message/MessageTemp/b4233c34ed917dc0bab79787e646d4b6/Image/861641469680_.pic.jpg";
 
         // 通用文字识别
 //        JSONObject res = client.basicGeneral(path, new HashMap<String, String>());
