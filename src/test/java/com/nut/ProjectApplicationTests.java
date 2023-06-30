@@ -21,6 +21,7 @@ public class ProjectApplicationTests {
 
     @Test
     public void userInfoService() {
+
         UserInfo userInfo = new UserInfo();
         userInfo.setUserId(UUID.randomUUID().toString().replaceAll("-", ""));
         userInfo.setUserName("宝宝");
